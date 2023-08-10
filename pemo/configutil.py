@@ -3,7 +3,7 @@ import os
 
 def read_config():
     cur_dir = os.path.split(os.path.realpath(__file__))[0]
-    with open(os.path.join(cur_dir, "./resources/config.json"), "r", encoding="utf-8") as f:
+    with open(os.path.join(cur_dir, "resources/config.json"), "r", encoding="utf-8") as f:
         data = json.load(f)
 
     return data
@@ -12,7 +12,7 @@ def read_config():
 def write_config(config):
     json_str = json.dumps(config)
     cur_dir = os.path.split(os.path.realpath(__file__))[0]
-    with open(os.path.join(cur_dir, "./resources/config.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(cur_dir, "resources/config.json"), "w", encoding="utf-8") as f:
         f.write(json_str)
 
 

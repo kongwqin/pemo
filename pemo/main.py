@@ -2,7 +2,7 @@ import uuid
 
 import click
 
-from builder import *
+from .builder import *
 
 
 @click.group()

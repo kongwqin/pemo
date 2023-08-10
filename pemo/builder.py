@@ -1,6 +1,6 @@
-from tencent import TencentOSS
-from commonoss import OSSType
-from configutil import *
+from .tencent import TencentOSS
+from .commonoss import OSSType
+from .configutil import *
 
 oss_instance = {
     OSSType.TENCENT.value: TencentOSS()

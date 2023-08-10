@@ -3,8 +3,8 @@ from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import os
 import uuid
-from configutil import match_config, read_oss_config
-from commonoss import CommonOSS, OSSType
+from .configutil import match_config, read_oss_config
+from .commonoss import CommonOSS, OSSType
 
 
 class TencentOSS(CommonOSS, ABC):
