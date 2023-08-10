@@ -1,8 +1,10 @@
+import sys
 import uuid
 
 import click
 
 from .builder import *
+from .ziputil import *
 
 
 @click.group()
@@ -41,6 +43,14 @@ def config(op, oss_type, all):
 @click.option("--oss-type", "-t", help="指定存储类型", type=click.Choice(['tencent', 'ali']))
 def upload(path, oss_type):
     common = build_oss(oss_type)
+    if os.path.isdir(path):
+        choice = input('你当前选择上传的是文件夹,是否继续操作?(Y/N)')
+        if choice in ['N', 'n']:
+            sys.exit()
+        zip_path = '/'.join(path.split('/')[:-1]) + 'data.zip'
+        zip_directory(path, zip_path)
+        path = zip_path
+
     common.execute(path)
 
 
