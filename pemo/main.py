@@ -47,7 +47,7 @@ def upload(path, oss_type):
         choice = input('你当前选择上传的是文件夹,是否继续操作?(Y/N)')
         if choice in ['N', 'n']:
             sys.exit()
-        zip_path = '/'.join(path.split('/')[:-1]) + 'data.zip'
+        zip_path = '/'.join(path.split('/')[:-1]) + '/data.zip'
         zip_directory(path, zip_path)
         path = zip_path
 
