@@ -1,2 +1,0 @@
-click==8.1.6
-cos-python-sdk-v5==1.9.25
