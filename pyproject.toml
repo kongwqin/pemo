@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools", "setuptools_scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "pemo"
-version = "0.0.11"
+dynamic = ['version']
 authors = [
   { name="kenny", email="ztxemail@163.com" },
 ]
@@ -19,16 +19,17 @@ classifiers = [
 dependencies = [
     "click==8.1.6",
     "cos-python-sdk-v5==1.9.25",
-    "zipfile=="
+    "zipfile"
 ]
 
 [tool.setuptools]
 include-package-data = true
 
+[tool.setuptools_scm]
+
+
 [tool.setuptools.package-data]
 pemo = ["resources/*.json"]
-
-
 
 [project.scripts]
 pemo = "pemo:cli"
