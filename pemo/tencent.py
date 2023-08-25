@@ -32,9 +32,9 @@ class TencentOSS(CommonOSS, ABC):
     def refresh_config(self):
         config = read_oss_config(OSSType.TENCENT)
         self.secret_id = config['secret_id']
-        self.secret_id = config['secret_id']
-        self.secret_id = config['secret_id']
-        self.secret_id = config['secret_id']
+        self.secret_key = config['secret_key']
+        self.region = config['region']
+        self.bucket = config['bucket']
 
     # 生成连接客户端
     def get_client(self):
